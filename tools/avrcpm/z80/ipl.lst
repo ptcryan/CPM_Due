@@ -1,0 +1,80 @@
+# File ipl.asm
+0000			;    CP/M IPL for avrcpm 
+0000			;    Copyright (C) 2010 Sprite_tm 
+0000			; 
+0000			;    This program is free software: you can redistribute it and/or modify 
+0000			;    it under the terms of the GNU General Public License as published by 
+0000			;    the Free Software Foundation, either version 3 of the License, or 
+0000			;    (at your option) any later version. 
+0000			; 
+0000			;    This program is distributed in the hope that it will be useful, 
+0000			;    but WITHOUT ANY WARRANTY; without even the implied warranty of 
+0000			;    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+0000			;    GNU General Public License for more details. 
+0000			; 
+0000			;    You should have received a copy of the GNU General Public License 
+0000			;    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+0000			 
+0000			org $2000 
+2000				; IPL for the CP/M-emu in an AVR. Loads CPM from the 'disk' from 
+2000				; track 0 sector 1 to track 1 sector 25. 
+2000			 
+2000 31 00 10			ld sp,$1000 
+2003				 
+2003 cd 35 20			call printipl 
+2006			 
+2006			; Here we want to copy the CP/M system from disk to memory. 
+2006			; CP/M occupies the first two tracks of the disk minus the 
+2006			; first sector which contains the initial program loader (this 
+2006			; program) 
+2006 06 33			ld b,51				; load 51 sectors (2 tracks * 26 sectors - this sector) 
+2008 11 01 00			ld de,$0001			; start with track 0 sector 1 
+200b 21 00 dc			ld hl,$3400+$A800	; destination is start of CCP+b 
+200e			loadloop: 
+200e 7a				ld a,d 				; track 
+200f d3 10			out (16),a 
+2011 7b				ld a,e 				; sector 
+2012 d3 12			out (18),a 
+2014 7d				ld a,l 				; dma L 
+2015 d3 14			out (20),a 
+2017 7c				ld a,h 				; dma H 
+2018 d3 15			out (21),a 
+201a 3e 01			ld a,1 				; Read sector to RAM 
+201c d3 16			out (22),a 
+201e			 
+201e c5				push bc 
+201f 01 80 00			ld bc,$80 			; increment RAM pointer to next block 
+2022 09				add hl,bc 
+2023 c1				pop bc 
+2024			 
+2024 1c				inc e 				; increment sector 
+2025 7b				ld a,e 
+2026 fe 1a			cp 26 
+2028 c2 2e 20			jp nz,noNextTrack 
+202b			 
+202b 14				inc d 				; increment track 
+202c 1e 00			ld e,0 				; reset sector counter to 0 
+202e			 
+202e			noNextTrack: 
+202e			 
+202e 05				dec b 
+202f c2 0e 20			jp nz,loadloop 
+2032			 
+2032 c3 00 f2			jp $4A00+$A800 		; jump to BIOS 
+2035			 
+2035			printipl: 
+2035 3e 69			ld a,'i' 
+2037 d3 02			out (2),a 
+2039 3e 70			ld a,'p' 
+203b d3 02			out (2),a 
+203d 3e 6c			ld a,'l' 
+203f d3 02			out (2),a 
+2041 3e 0d			ld a,13 
+2043 d3 02			out (2),a 
+2045 3e 0a			ld a,10 
+2047 d3 02			out (2),a 
+2049 c9				ret 
+204a			 
+204a			end
+# End of file ipl.asm
+204a

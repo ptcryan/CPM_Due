@@ -1,0 +1,1252 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Ex",
+				"ExecZ80"
+			],
+			[
+				"Dig",
+				"DigisparkRGB"
+			],
+			[
+				"D",
+				"DigisparkRGBDelay"
+			],
+			[
+				"Digispark",
+				"DigisparkRGB"
+			],
+			[
+				"Di",
+				"DigisparkRGB"
+			],
+			[
+				"Digi",
+				"DigisparkRGB"
+			],
+			[
+				"timer",
+				"timerTotal"
+			],
+			[
+				"tim",
+				"timerTotal"
+			],
+			[
+				"pulse",
+				"pulseFlag"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"cu",
+				"cubeArray"
+			],
+			[
+				"c",
+				"cell"
+			],
+			[
+				"cell",
+				"cell_t"
+			],
+			[
+				"COLOR",
+				"COLOR_YELLOW"
+			],
+			[
+				"print",
+				"println"
+			],
+			[
+				"prin",
+				"println"
+			],
+			[
+				"has",
+				"hasReceivedSerialCommand"
+			],
+			[
+				"byte",
+				"bytecode_t"
+			],
+			[
+				"Cu",
+				"CubeRD"
+			],
+			[
+				"CUBERD",
+				"CUBERD_h"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80.c",
+			"settings":
+			{
+				"buffer_size": 78154,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80.h",
+			"settings":
+			{
+				"buffer_size": 6829,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80IO.h",
+			"settings":
+			{
+				"buffer_size": 4083,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80em.h",
+			"settings":
+			{
+				"buffer_size": 112,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Z80IO.cpp",
+			"settings":
+			{
+				"buffer_size": 3979,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "z80em.cpp",
+			"settings":
+			{
+				"buffer_size": 1498,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 347.0,
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"cta",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"re",
+				"ClassHierarchy: Re/Load Hierarchy Tree"
+			],
+			[
+				"rebui",
+				"ClassHierarchy: Re/Build Ctags for Class Hierarchy"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"sub",
+				"SublimeLinter: Extract Annotations"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"subli",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"Pack",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"SublimeLint: Show All Errors"
+			],
+			[
+				"Package Control: En",
+				"Package Control: Enable Package"
+			]
+		],
+		"width": 458.0
+	},
+	"console":
+	{
+		"height": 425.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/David/Projects/z80em/z80em.ino",
+		"/Users/David/Documents/Arduino/libraries/z80em/untitled",
+		"/Users/David/Downloads/z80em/Z80.c",
+		"/Users/David/Downloads/z80em/Z80IO.h",
+		"/Users/David/Downloads/z80em/Z80.h",
+		"/Users/David/Downloads/z80em/README.txt",
+		"/Users/David/Downloads/z80em/z80em.ino",
+		"/Users/David/Downloads/8080-emulator/Readme.txt",
+		"/Users/David/Downloads/8080-emulator/8080-emulator.c",
+		"/Users/David/Downloads/z80em/Z80Dasm.c",
+		"/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/sam/cores/arduino/wiring_constants.h",
+		"/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/sam/cores/arduino/Arduino.h",
+		"/Users/David/Downloads/Z80/ArduinoZ80/Tables.h",
+		"/Users/David/Downloads/Z80/ArduinoZ80/ConDebug.c",
+		"/Users/David/Downloads/Z80/ArduinoZ80/Codes.h",
+		"/Users/David/Downloads/Z80/ArduinoZ80/CodesXX.h",
+		"/Users/David/Downloads/Z80/ArduinoZ80/Z80.h",
+		"/Users/David/Downloads/z80em/Z80CDx86.h",
+		"/Users/David/Downloads/z80em/Makefile",
+		"/Users/David/Downloads/Z80/ArduinoZ80/ArduinoZ80.ino",
+		"/Users/David/Projects/8080emulator/8080.c",
+		"/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/sam/cores/arduino/main.cpp",
+		"/Users/David/Downloads/Z80/Z80.h",
+		"/Users/David/Downloads/avrcpm/avr/z80.asm",
+		"/Users/David/Downloads/EMULib/I8255.c",
+		"/Users/David/Downloads/EMULib/Console.c",
+		"/Users/David/Downloads/zicog/cpm2SD.spin",
+		"/Users/David/Downloads/EMULib/FDIDisk.c",
+		"/Users/David/Downloads/TPASCAL1/8086/CALC.PAS",
+		"/Users/David/Downloads/TPASCAL1/8086/CALCMAIN.PAS",
+		"/Users/David/Downloads/STDCPM22/DUMP.ASM",
+		"/Users/David/Downloads/STDCPM22/DISKDEF.LIB",
+		"/Users/David/Downloads/TED86/TED.A86",
+		"/Users/David/Github/pebble8ball/appinfo.json",
+		"/Users/David/Downloads/TED86/TED.CMD",
+		"/Users/David/Downloads/Z80/Z80.c",
+		"/Users/David/Downloads/Z80/ArduinoZ80/Debug.c",
+		"/Users/David/Downloads/Z80/april_1morehouse_fieldtrip_already_paid_2_docx.ino",
+		"/Users/David/pebble-dev/PebbleSDK-2.0.2/Examples/watchapps/feature_inverter_layer/src/feature_inverter_layer.c",
+		"/Users/David/Github/PebbleLocalSim/build/mac/sim/Makefile",
+		"/Users/David/Github/pebble8ball/src/pebble8ball.c",
+		"/Users/David/pebble-dev/PebbleSDK-2.0.2/Pebble/include/pebble_app_info.h",
+		"/Users/David/pebble-dev/PebbleSDK-2.0.2/Pebble/include/pebble_fonts.h",
+		"/Users/David/pebble-dev/PebbleSDK-2.0.2/Pebble/include/pebble.h",
+		"/Users/David/Library/Logs/CCC.log",
+		"/Users/David/Library/LaunchAgents/com.bombich.ccc-user-agent.plist",
+		"/Users/David/Projects/testmultiwii/testmultiwii/Builds/embeddedcomputing.a",
+		"/Users/David/Desktop/40836.tmp",
+		"/Users/David/Desktop/mraid.js",
+		"/Users/David/Documents/Arduino/libraries/AdafruitVC0706SerialCameraLibrary/Adafruit_VC0706.cpp",
+		"/Users/David/Documents/Arduino/libraries/AdafruitVC0706SerialCameraLibrary/Adafruit_VC0706.h",
+		"/Users/David/Documents/Arduino/libraries/AdafruitVC0706SerialCameraLibrary/examples/MotionDetect/MotionDetect.pde",
+		"/Users/David/Projects/MultiWii_2_3/MultiWii/config.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/AdafruitVC0706SerialCameraLibrary/examples/MotionDetect/MotionDetect.pde",
+		"/Users/David/Box Documents/Projects/CrossFadeRGB/CrossFadeRGB.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DigisparkRGB/DigisparkRGB.cpp",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DigisparkRGB/DigisparkRGB.h",
+		"/Users/David/Downloads/MultiWii_2_3/MultiWii/MultiWii.ino",
+		"/Users/David/Downloads/MultiWii_2_3/MultiWii/config.h",
+		"/Users/David/Library/Arduino/preferences.txt",
+		"/Users/David/Downloads/MultiWii_2_3/MultiWiiConf/MultiWiiConf.pde",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DigisparkRGB/examples/TimeFader/TimeFader.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DHT22/dht22.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DHT22/dht22.cpp",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/RF24/examples/GettingStarted/GettingStarted.pde",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/Mirf/examples/ping_server_interupt/ping_server_interupt.pde",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/Mirf/Mirf.cpp",
+		"/Applications/DigisparkArduino.app/Contents/Resources/Java/examples/Digispark_Examples/EEPROM/EEPROM.ino",
+		"/Applications/Arduino.1.5.2.app/Contents/Resources/Java/hardware/arduino/avr/variants/mega/pins_arduino.h",
+		"/Applications/Arduino.1.5.2.app/Contents/Resources/Java/hardware/arduino/avr/cores/arduino/Arduino.h",
+		"/Applications/DigisparkArduino.app/Contents/Resources/Java/hardware/digispark/boards.txt",
+		"/Applications/DigisparkArduino.app/Contents/Resources/Java/hardware/digispark/readme.txt",
+		"/Applications/DigisparkArduino.app/Contents/Resources/Java/examples/Digispark_Examples/Expander/Expander.ino",
+		"/Applications/DigisparkArduino.app/Contents/Resources/Java/hardware/digispark/cores/tiny/pins_arduino.h",
+		"/Applications/DigisparkArduino.app/Contents/Resources/Java/hardware/digispark/cores/tiny/core_adc.h",
+		"/Applications/DigisparkArduino.app/Contents/Resources/Java/hardware/digispark/cores/tiny/Arduino.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/RF24/RF24.cpp",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/RF24/RF24_config.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/RF24/RF24.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/Mirf/examples/reg_read/reg_read.pde",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/RF24/examples/scanner/scanner.pde",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/RF24/examples/pingpair_irq/pingpair_irq.pde",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/LiquidCrystal/LiquidCrystal.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/LiquidCrystal/LiquidCrystal_I2C.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DigisparkLCD/LiquidCrystal_I2C.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DigisparkLCD/LiquidCrystal_I2C.cpp",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/DigisparkLCD/keywords.txt",
+		"/Applications/Arduino.1.5.2.app/Contents/Resources/Java/libraries/LiquidCrystal/LiquidCrystal.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Examples/SnowDay/SnowDay.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/keywords.txt",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/color.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/parser.cpp",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/ClassHierarchy/ClassHierarchy.sublime-settings",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/CubeRD.cpp",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/David/Library/Application Support/Sublime Text 2/Pristine Packages/TCL.sublime-package",
+		"/Users/David/Library/Application Support/Sublime Text 2/Pristine Packages/Color Scheme - Default.sublime-package",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/Vintage/Default (OSX).sublime-keymap",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/User/ClassHierarchy.sublime-settings",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/serial.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/serial.cpp",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/README.txt",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Rainbowduino.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/parser.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/engine.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/engine.cpp",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/CubeRD.h",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/CubeRD.markdown",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/TestPattern/TestPattern.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/SunnyDay/SunnyDay.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/SerialTest/SerialTest.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/RandomPrimaries/RandomPrimaries.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/RandomPastels/RandomPastels.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/RandomColours/RandomColours.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/RainStorm/RainStorm.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/PiezoKnockDetection/PiezoKnockDetection.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/Heartbeat/Heartbeat.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/CubeInvaders/CubeInvaders.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube4_examples/AccelerometerColour/AccelerometerColour.ino",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/Cube.h",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/GitHub Flavored Markdown Preview/Default (OSX).sublime-keymap",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/CubeRD/font.c",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/Cube4/parser.cpp",
+		"/Users/David/Box Documents/Projects/Arduino/libraries/Cube4/Cube.cpp",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/GitGutter/README.md",
+		"/Users/David/Library/Application Support/Sublime Text 2/Packages/GitGutter/GitGutter.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"\n#include <Z80.h>\n#include \"Z80em.h\"\n#include <stdio.h>\n#include <stdlib.h>\n\n// Create the memory space that will emulate RAM\nbyte PC_MEM[65536];\n\nvoid setup()\n{\n	// setup the serial port for debug purposes\n	Serial.begin(19200);\n	while(!Serial) {\n		;\n	}\n\n	Serial.println(\"Intel 8080 Emulator for CP/M\");\n	Serial.println(\"Running an ARM Cortex-M3\");\n	Serial.print(\"Ram: \");\n	Serial.print(sizeof(PC_MEM));\n	Serial.println(\" bytes\");\n\n/*\n        Serial.println(\"Memory Dump:\");\n        char buf[8];\n        for (int i = 0; i < sizeof(PC_MEM); i+=16) {\n          Serial.print(itoa(i, buf, 16));\n          Serial.print(\": \");\n          for (int j = i; j < i+16; j++) {\n            Serial.print(itoa(PC_MEM[j], buf, 16));\n            Serial.print(\" \");\n          }\n          Serial.print(\" | \");\n          for (int k = i; k < i+16; k++) {\n            if (PC_MEM[k] > 31) {\n              Serial.print(PC_MEM[k]);\n            } else {\n              Serial.print(\".\");\n            }\n          }\n          Serial.println();\n        }\n*/\n\n	// Reset the CPU\n        Serial.println(\"Resetting CPU\");\n        Z80_Reset();\n        Serial.println(\"Printing Registers\");\n        Z80_RegisterDump();\n\n	delay(5000);\n	Serial.println(\"Running...\");\n\n	// Start the CPU\n	Z80();\n\n	// If we return it might be due to a crash.\n	// Dump the register contents for debug.\n	//Z80_RegisterDump();\n	word count;\n	while (++count) {\n		Serial.print(count);\n	}\n}\n\nvoid loop() {\n  // put your main code here, to run repeatedly:\n  while(1) {\n    ;\n  }\n}\n",
+			"R.",
+			"R.\n\n\n\n\n\n\n\n\n\n\nR.",
+			"R.",
+			"R",
+			"Z80_IRQ",
+			"printf",
+			"DoIn",
+			"Z80_In",
+			"byte",
+			"EXECZ80",
+			"main",
+			" Z80",
+			"Z80",
+			"EXECZ80",
+			"main",
+			"camerabuff",
+			"swSerial",
+			"pipe",
+			"radio",
+			"lcdDisp",
+			"t_backlighPol",
+			"t_backlightPol",
+			"uint_8",
+			"getPixelZXY",
+			"cubeCopyplane",
+			"printHelp",
+			"hasReceived",
+			"serialHandler",
+			"serialBegin",
+			"serial",
+			"parseCommandAll",
+			"BLACK",
+			"RED",
+			" fillPlaneZ",
+			"fillPlaneZ",
+			"cubeFillPlaneZ",
+			"cubeAll",
+			"cube.",
+			"cube",
+			"receivedSerialCommand",
+			"ISR",
+			"parseCommandAll",
+			"RM",
+			"hasReceivedSerialCommand",
+			"receivedSerialCommand",
+			"parser(",
+			"parser",
+			"parse",
+			"readMessage",
+			"hasReceivedSerialCommand",
+			"commands",
+			"commandCount",
+			";\n",
+			"commandCount",
+			"commands",
+			"Rb",
+			"cube.h",
+			"parser.h",
+			"commands",
+			"commandCount",
+			"bytecode_t",
+			"parser",
+			"serial1",
+			"Serial1",
+			"serial",
+			"cubeAll",
+			"bytecode_t",
+			"RBRAC",
+			"SPACE",
+			"NUL",
+			"serialBegin",
+			"extern",
+			"serial.h",
+			"serialBegin",
+			"Rainbowduino::",
+			"line",
+			"horizontal",
+			"syntax_map",
+			"send16bitData",
+			"baud",
+			"seq",
+			"IOBIT",
+			"TTYRED"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"byte",
+			"CubeRD::"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80.c",
+					"settings":
+					{
+						"buffer_size": 78154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2969,
+								2969
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"c_cpplint": "/Users/David/cpplint/cpplint.py"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Arduino": "c_cpplint",
+								"C": "c_cpplint",
+								"C++": "c_cpplint",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 7401.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80.h",
+					"settings":
+					{
+						"buffer_size": 6829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5286,
+								5286
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"c_cpplint": "/Users/David/cpplint/cpplint.py"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Arduino": "c_cpplint",
+								"C": "c_cpplint",
+								"C++": "c_cpplint",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 158.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80IO.h",
+					"settings":
+					{
+						"buffer_size": 4083,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								4083
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"c_cpplint": "/Users/David/cpplint/cpplint.py"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Arduino": "c_cpplint",
+								"C": "c_cpplint",
+								"C++": "c_cpplint",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/David/Documents/Arduino/libraries/z80em/Z80em.h",
+					"settings":
+					{
+						"buffer_size": 112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"c_cpplint": "/Users/David/cpplint/cpplint.py"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Arduino": "c_cpplint",
+								"C": "c_cpplint",
+								"C++": "c_cpplint",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Z80IO.cpp",
+					"settings":
+					{
+						"buffer_size": 3979,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"c_cpplint": "/Users/David/cpplint/cpplint.py"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Arduino": "c_cpplint",
+								"C": "c_cpplint",
+								"C++": "c_cpplint",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "z80em.cpp",
+					"settings":
+					{
+						"buffer_size": 1498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"c_cpplint": "/Users/David/cpplint/cpplint.py"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"Arduino": "c_cpplint",
+								"C": "c_cpplint",
+								"C++": "c_cpplint",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 201.0,
+	"status_bar_visible": true
+}
