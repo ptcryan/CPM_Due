@@ -21,60 +21,60 @@
 2000			 
 2000 31 00 10			ld sp,$1000 
 2003				 
-2003 cd 35 20			call printipl 
-2006			 
-2006			; Here we want to copy the CP/M system from disk to memory. 
-2006			; CP/M occupies the first two tracks of the disk minus the 
-2006			; first sector which contains the initial program loader (this 
-2006			; program) 
-2006 06 33			ld b,51				; load 51 sectors (2 tracks * 26 sectors - this sector) 
-2008 11 01 00			ld de,$0001			; start with track 0 sector 1 
-200b 21 00 dc			ld hl,$3400+$A800	; destination is start of CCP+b 
-200e			loadloop: 
-200e 7a				ld a,d 				; track 
-200f d3 10			out (16),a 
-2011 7b				ld a,e 				; sector 
-2012 d3 12			out (18),a 
-2014 7d				ld a,l 				; dma L 
-2015 d3 14			out (20),a 
-2017 7c				ld a,h 				; dma H 
-2018 d3 15			out (21),a 
-201a 3e 01			ld a,1 				; Read sector to RAM 
-201c d3 16			out (22),a 
-201e			 
-201e c5				push bc 
-201f 01 80 00			ld bc,$80 			; increment RAM pointer to next block 
-2022 09				add hl,bc 
-2023 c1				pop bc 
-2024			 
-2024 1c				inc e 				; increment sector 
-2025 7b				ld a,e 
-2026 fe 1a			cp 26 
-2028 c2 2e 20			jp nz,noNextTrack 
+2003			;	call printipl 
+2003			 
+2003			; Here we want to copy the CP/M system from disk to memory. 
+2003			; CP/M occupies the first two tracks of the disk minus the 
+2003			; first sector which contains the initial program loader (this 
+2003			; program) 
+2003 06 33			ld b,51				; load 51 sectors (2 tracks * 26 sectors - this sector) 
+2005 11 01 00			ld de,$0001			; start with track 0 sector 1 
+2008 21 00 dc			ld hl,$3400+$A800	; destination is start of CCP+b 
+200b			loadloop: 
+200b 7a				ld a,d 				; track 
+200c d3 10			out (16),a 
+200e 7b				ld a,e 				; sector 
+200f d3 12			out (18),a 
+2011 7d				ld a,l 				; dma L 
+2012 d3 14			out (20),a 
+2014 7c				ld a,h 				; dma H 
+2015 d3 15			out (21),a 
+2017 3e 01			ld a,1 				; Read sector to RAM 
+2019 d3 16			out (22),a 
+201b			 
+201b c5				push bc 
+201c 01 80 00			ld bc,$80 			; increment RAM pointer to next block 
+201f 09				add hl,bc 
+2020 c1				pop bc 
+2021			 
+2021 1c				inc e 				; increment sector 
+2022 7b				ld a,e 
+2023 fe 1a			cp 26 
+2025 c2 2b 20			jp nz,noNextTrack 
+2028			 
+2028 14				inc d 				; increment track 
+2029 1e 00			ld e,0 				; reset sector counter to 0 
 202b			 
-202b 14				inc d 				; increment track 
-202c 1e 00			ld e,0 				; reset sector counter to 0 
-202e			 
-202e			noNextTrack: 
-202e			 
-202e 05				dec b 
-202f c2 0e 20			jp nz,loadloop 
+202b			noNextTrack: 
+202b			 
+202b 05				dec b 
+202c c2 0b 20			jp nz,loadloop 
+202f			 
+202f c3 00 f2			jp $4A00+$A800 		; jump to BIOS 
 2032			 
-2032 c3 00 f2			jp $4A00+$A800 		; jump to BIOS 
-2035			 
-2035			printipl: 
-2035 3e 69			ld a,'i' 
-2037 d3 02			out (2),a 
-2039 3e 70			ld a,'p' 
-203b d3 02			out (2),a 
-203d 3e 6c			ld a,'l' 
-203f d3 02			out (2),a 
-2041 3e 0d			ld a,13 
-2043 d3 02			out (2),a 
-2045 3e 0a			ld a,10 
-2047 d3 02			out (2),a 
-2049 c9				ret 
-204a			 
-204a			end
+2032			printipl: 
+2032 3e 69			ld a,'i' 
+2034 d3 02			out (2),a 
+2036 3e 70			ld a,'p' 
+2038 d3 02			out (2),a 
+203a 3e 6c			ld a,'l' 
+203c d3 02			out (2),a 
+203e 3e 0d			ld a,13 
+2040 d3 02			out (2),a 
+2042 3e 0a			ld a,10 
+2044 d3 02			out (2),a 
+2046 c9				ret 
+2047			 
+2047			end
 # End of file ipl.asm
-204a
+2047

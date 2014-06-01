@@ -54,22 +54,19 @@ void setup(void) {
   }
 
   // fill PC RAM with 0xCB
-  Serial.print("Initializing PC RAM...");
+  Serial.print("Running PC RAM tests...");
   uint32_t i;
   for (i = 0; i < SYSTEM_MEMORY_SIZE; i++) {
     PC_MEM[i] = 0xcb;
   }
-  Serial.println("Done");
 
   // verify memory
-  Serial.print("Verifying RAM...");
   bool memTestPass = true;
   for (i = 0; i < SYSTEM_MEMORY_SIZE; i++) {
     if (PC_MEM[i] != 0xcb) {
       memTestPass = false;
-      Serial.print("Memory test failed at ");
+      Serial.print(" failed at ");
       Serial.println(i, HEX);
-      break;
     }
   }
 
@@ -85,7 +82,7 @@ void setup(void) {
   // Use the port interfaces we already have
   // to load the system Cold Start Loader
   Serial.println("");
-  Serial.println("booting...");
+  Serial.println("booting from boot sector...");
 
   // The ipl is located on track 0 sector 0 of disk
   Z80_Out(0x10, 0);  // track=0

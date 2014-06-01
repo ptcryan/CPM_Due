@@ -9,7 +9,7 @@
 #include <SD.h>
 #include "Z80em.h"
 
-// #define EMU_DEBUG
+#define EMU_DEBUG
 
 extern Sd2Card card;
 byte fileBuffer[512];	// file IO buffer. Used for transferring SD data.

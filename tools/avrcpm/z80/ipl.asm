@@ -20,7 +20,7 @@ org $2000
 
 	ld sp,$1000
 	
-	call printipl
+;	call printipl
 
 ; Here we want to copy the CP/M system from disk to memory.
 ; CP/M occupies the first two tracks of the disk minus the

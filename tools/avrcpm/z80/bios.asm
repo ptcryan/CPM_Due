@@ -14,7 +14,20 @@
 ;    You should have received a copy of the GNU General Public License
 ;    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-org $4A00+$A800
+mem_offset:	equ	$A800				; Offset for 62K of memory
+bios:		equ	$4A00+mem_offset	; base of BIOS
+cpmb:		equ	$3400+mem_offset	; base of CPM (CCP)
+bdos:		equ	$3c06+mem_offset	; base of BDOS
+iobyte:		equ $0003				; address of the IOBYTE
+cdisk:		equ	$0004				; address of last logged disk
+buff:		equ	$0080				; default buffer address
+
+cr:			equ	$0d					; carriage return
+lf:			equ	$0a					; line feed
+
+
+
+org	bios
 	jp boot
 wboote:
 	jp wboot
@@ -36,58 +49,91 @@ wboote:
 
 ; Disk Parameter Header
 dph:
-	dw trans 		; XLT:    Address of translation table
-	dw 0 			; 000:    Scratchpad
-	dw 0 			; 000:    Scratchpad
-	dw 0 			; 000:    Scratchpad
-	dw dirbuf 		; DIRBUF: Address of a dirbuff scratchpad
-	dw dpb 			; DPB:    Address of a disk parameter block
-	dw chk 			; CSV:    Address of scratchpad area for changed disks
-	dw all 			; ALV:    Address of an allocation info sratchpad
+	dw trans 						; XLT:    Address of translation table
+	dw 0 							; 000:    Scratchpad
+	dw 0 							; 000:    Scratchpad
+	dw 0 							; 000:    Scratchpad
+	dw dirbuf 						; DIRBUF: Address of a dirbuff scratchpad
+	dw dpb 							; DPB:    Address of a disk parameter block
+	dw chk 							; CSV:    Address of scratchpad area for changed disks
+	dw all 							; ALV:    Address of an allocation info sratchpad
 
 signon:
-	db 0dh,0ah,0ah
+	db 0dh, 0ah, 0ah
 	db '64'
-	db 'K cp/m vers 2.2'
-	db 0dh,0ah,0
+	db 'K CP/M Vers 2.2', cr, lf
+	db 'Z80Due BIOS v0.2', cr, lf, 0
 
 boot:
+	ld sp, buff+$80
+	ld hl, signon
+	call prmsg
 	xor a
-	ld (3),a
-	ld (4),a
+	ld (iobyte), a					; clear the IOBYTE
+	ld (cdisk), a					; clear the active disk
+	jp gocpm
 
 wboot:
-	ld hl,signon
-nextc:
-	ld a,(hl)
-	or a
-	jp z, gocpm
-	out (2),a
-	inc hl
-	jp nextc
+	ld sp, buff						; use the disk buffer space for now. Not being used now.
 
+; reload CP/M and initialize low memory
+loadcpm:
+	ld b, 51						; load 51 sectors (2 tracks * 26 sectors - ipl)
+	ld de, $0001					; start with track 0 sector 1
+	ld hl, cpmb						; destination is start of CCP+b
+loadloop:
+	ld c, d			 				; set the track
+	call settrk
+	ld c ,e							; set sector
+	call setsec
+	push bc
+	ld b, h							; set DMA
+	ld c, l
+	call setdma
+;	pop bc
+	call read 						; Read sector to RAM
+;	push bc
+	ld bc, $80 						; increment RAM pointer to next block
+	add hl, bc
+	pop bc
+	inc e 							; increment sector
+	ld a, e
+	cp 26
+	jp nz, noNextTrack
+	inc d 							; increment track
+	ld e, 0 						; reset sector counter to 0
+noNextTrack:
+	dec b
+	jp nz, loadloop
 
-	;ToDo: re-load CP/M
-gocpm:
-	ld hl,firstBytes
-	ld de,0
-	ld c,$40 ; copy to 0 through 0x3f
-
-fbloop:
-	ld a,(hl)
-	ld (de),a
-	inc hl
-	inc de
-	dec c
-	jp nz,fbloop
-
+; CP/M is reloaded. Now initialize low memory
 ; Initialize the DMA to 0x0080
-	ld bc, $0080
+gocpm:
+	ld bc, buff
 	call setdma
 
-; Put the initial drive # (0) into c and jump to CP/M
-	ld c,0
-	jp $3400+$A800
+; Reset monitor entry points
+	ld a, $c3						; load a with jump opcode
+	ld (0), a						; store at 0000
+	ld hl, wboote					; load hl with warm boot address
+;	ld (1), hl						; store at 0001
+	ld a, l
+	ld (1), a
+	ld a, h
+	ld (2), a
+	ld (5), a						; store jump at 0005
+	ld hl, bdos						; load hl with bdos entry
+;	ld (6), hl						; store at 0006
+	ld a, l
+	ld (6), a
+	ld a, h
+	ld (7), a
+
+; Put the initial drive # into c and jump to CP/M
+	ld a, (cdisk)
+	ld c, a
+
+	jp cpmb
 
 const:
 	in a,(0)
@@ -184,39 +230,17 @@ sectran:
 	ld l,c
 	ret
 
-; The following data is moved into the beginning of memory at boot
-firstBytes:
-; Addr=0x00 : Warm boot
-	jp wboote       ; JMP WBOOT
-; Addr=0x03 : IO byte
-	db 0			; IOBYTE
-; Addr=0x04 : DSK byte
-	db 0			; user:drive
-; Addr=0x05 : BDOS Call
-	jp $3C06+$A800	; JMP BDOS
+	ld hl, signon					; print the CP/M banner
 
-; Reserve space for Vectors (not used in this system, but reserved anyway)
-; Addr=0x08 : Vector 1
-restartVector1:
-	ds 8
-; Addr=0x10 : Vector 2
-restartVector2:
-	ds 8
-; Addr=0x18 : Vector 3
-restartVector3:
-	ds 8
-; Addr=0x20 : Vector 4
-restartVector4:
-	ds 8
-; Addr=0x28 : Vector 5
-restartVector5:
-	ds 8
-; Addr=0x30 : Vector 6
-restartVector6:
-	ds 8
-; Addr=0x38 : Vector 7
-restartVector7:
-	ds 8
+prmsg:
+	ld a, (hl)
+	or a
+	ret z
+	ld c, a
+	call conout
+	inc hl
+	jp prmsg
+
 
 ; Disk Parameter Block
 dpb:
