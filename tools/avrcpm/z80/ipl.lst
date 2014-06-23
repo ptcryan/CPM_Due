@@ -1,6 +1,6 @@
 # File ipl.asm
-0000			;    CP/M IPL for avrcpm 
-0000			;    Copyright (C) 2010 Sprite_tm 
+0000			;    CP/M IPL for z80due 
+0000			;    Copyright (C) 2014 ptcryan 
 0000			; 
 0000			;    This program is free software: you can redistribute it and/or modify 
 0000			;    it under the terms of the GNU General Public License as published by 
@@ -16,7 +16,7 @@
 0000			;    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
 0000			 
 0000			org $2000 
-2000				; IPL for the CP/M-emu in an AVR. Loads CPM from the 'disk' from 
+2000				; IPL for the z80due. Loads CPM from the 'disk' from 
 2000				; track 0 sector 1 to track 1 sector 25. 
 2000			 
 2000 31 00 10			ld sp,$1000 

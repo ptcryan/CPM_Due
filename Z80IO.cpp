@@ -40,9 +40,9 @@ byte Z80_In (byte Port) {
 
 		case 0x00:  // console status
 			if (Serial.available()) {
-				return 0xff;
+				return 0xff;	// character ready
 			} else {
-				return 0x00;
+				return 0x00;	// character not ready
 			}
 			break;
 
@@ -51,7 +51,7 @@ byte Z80_In (byte Port) {
 				;  // block until serial port has data
 			}
 			conchar = Serial.read();
-			return (conchar & 0x7F);  // return the character stripping parity
+			return (conchar & 0x7F);  // return the character stripping MSB
 			break;
 
 		default:
@@ -157,7 +157,7 @@ void Z80_Out (byte Port,byte Value) {
 
 		default:
 #ifdef EMU_DEBUG
-			Serial.print("Unhandled out: ");
+			Serial.print("Unhandled write: ");
 			Serial.print(Value, HEX);
 			Serial.print(" to port: ");
 			Serial.println(Port, HEX);

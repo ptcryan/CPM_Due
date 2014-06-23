@@ -1,5 +1,5 @@
-;    CP/M BIOS for avrcpm
-;    Copyright (C) 2010 Sprite_tm
+;    CP/M BIOS for z80due
+;    Copyright (C) 2014 ptcryan
 ;
 ;    This program is free software: you can redistribute it and/or modify
 ;    it under the terms of the GNU General Public License as published by
@@ -24,6 +24,16 @@ buff:		equ	$0080				; default buffer address
 
 cr:			equ	$0d					; carriage return
 lf:			equ	$0a					; line feed
+
+c_status:	equ $00 				; console status port
+c_input:	equ $01 				; console input port
+c_output:	equ $02 				; console output port
+t_set: 		equ $10					; track port
+s_set: 		equ $12					; sector port
+dma_low:	equ $14					; dma low port
+dma_high: 	equ $15					; dma high port
+dma_xfer:	equ $16					; dma transfer port
+
 
 
 
@@ -59,7 +69,7 @@ dph:
 	dw all 							; ALV:    Address of an allocation info sratchpad
 
 signon:
-	db 0dh, 0ah, 0ah
+	db cr, lf, lf
 	db '64'
 	db 'K CP/M Vers 2.2', cr, lf
 	db 'Z80Due BIOS v0.2', cr, lf, 0
@@ -68,6 +78,7 @@ boot:
 	ld sp, buff+$80
 	ld hl, signon
 	call prmsg
+
 	xor a
 	ld (iobyte), a					; clear the IOBYTE
 	ld (cdisk), a					; clear the active disk
@@ -78,7 +89,7 @@ wboot:
 
 ; reload CP/M and initialize low memory
 loadcpm:
-	ld b, 51						; load 51 sectors (2 tracks * 26 sectors - ipl)
+	ld b, 44						; load 43 sectors. Just CCP + BDOS. Track 0 sector 1 to Track 1 sector 18
 	ld de, $0001					; start with track 0 sector 1
 	ld hl, cpmb						; destination is start of CCP+b
 loadloop:
@@ -112,45 +123,37 @@ gocpm:
 	ld bc, buff
 	call setdma
 
-; Reset monitor entry points
+; Reset cp/m entry points
 	ld a, $c3						; load a with jump opcode
 	ld (0), a						; store at 0000
 	ld hl, wboote					; load hl with warm boot address
-;	ld (1), hl						; store at 0001
-	ld a, l
-	ld (1), a
-	ld a, h
-	ld (2), a
+	ld (1), hl						; store at 0001
 	ld (5), a						; store jump at 0005
 	ld hl, bdos						; load hl with bdos entry
-;	ld (6), hl						; store at 0006
-	ld a, l
-	ld (6), a
-	ld a, h
-	ld (7), a
+	ld (6), hl						; store at 0006
 
 ; Put the initial drive # into c and jump to CP/M
 	ld a, (cdisk)
 	ld c, a
 
-	jp cpmb
+	jp cpmb							; jump to CCP
 
 const:
-	in a,(0)
+	in a,(c_status)
 	ret
 
 conin:
-	in a,(0)
+	in a,(c_status)
 	cp $ff
 	jp nz,conin
 
-	in a,(1)
+	in a,(c_input)
 	ret
 
 conout:
 	push af
 	ld a,c
-	out (2),a
+	out (c_output),a
 	pop af
 	ret
 
@@ -161,13 +164,13 @@ punch:
 	ret
 
 reader:
-	ld a,$1F
+	ld a,$1A						; enter end of file for now
 	ret
 
 home:
 	push af
 	ld a,0
-	out (16),a
+	out (t_set),a
 	pop af
 	ret
 
@@ -184,38 +187,38 @@ seldsk_na:
 	pop af
 	ret
 
-settrk:
+settrk:								; TODO: should be word arg. Use BC not just C.
 	push af
 	ld a,c
-	out (16),a
+	out (t_set),a
 	pop af
 	ret
 
 setsec:
 	push af
 	ld a,c
-	out (18),a
+	out (s_set),a
 	pop af
 	ret
 
 setdma:
 	push af
 	ld a,c
-	out (20),a
+	out (dma_low),a
 	ld a,b
-	out (21),a
+	out (dma_high),a
 	pop af
 	ret
 
 read:
 	ld a,1
-	out (22),a
+	out (dma_xfer),a
 	ld a,0
 	ret
 
 write:
 	ld a,2
-	out (22),a
+	out (dma_xfer),a
 	ld a,0
 	ret
 
@@ -225,12 +228,10 @@ listst:
 
 sectran:
 	;translate sector bc using table at de, res into hl
-	;not implemented :)
+	;no skewing needed for this system.
 	ld h,b
 	ld l,c
 	ret
-
-	ld hl, signon					; print the CP/M banner
 
 prmsg:
 	ld a, (hl)
@@ -260,16 +261,16 @@ trans:
 	db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 	db 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26
 
-; Scratchpad area for BDOS directory operation.
+; Scratchpad area for BDOS disk use.
 dirbuf:
 	ds 128			; DMA transfer area
 
 ; Scratchpad area to check for changed disks
 chk:
-	ds 16			; 
+	ds 16
 
 ; Scratchpad area to keep disk storage allocation information
 all:
-	ds 31			;
+	ds 31
 
 end

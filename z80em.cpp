@@ -16,13 +16,14 @@ const int chipSelect = 4;
 void DumpMem(int start, int stop);
 
 #define SYSTEM_MEMORY_SIZE 65536
+#define SERIAL_SPEED 19200
 
 // Create the memory space that will emulate RAM
 volatile byte PC_MEM[SYSTEM_MEMORY_SIZE];  // The Due has 96KB total so there's room for 64K!
 
 void setup(void) {
   // setup the serial port for debug purposes
-  Serial.begin(19200);
+  Serial.begin(SERIAL_SPEED);
   while (!Serial) {
     {}
   }
@@ -76,8 +77,6 @@ void setup(void) {
 
   // Reset the CPU
   Z80_Reset();
-  // Serial.println("Printing Registers");
-  // Z80_RegisterDump();
 
   // Use the port interfaces we already have
   // to load the system Cold Start Loader
