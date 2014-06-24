@@ -72,7 +72,7 @@ signon:
 	db cr, lf, lf
 	db '64'
 	db 'K CP/M Vers 2.2', cr, lf
-	db 'Z80Due BIOS v0.2', cr, lf, 0
+	db 'Z80Due BIOS v1.0', cr, lf, 0
 
 boot:
 	ld sp, buff+$80
