@@ -75,6 +75,11 @@ void setup(void) {
     Serial.println("Pass");
   }
 
+  // clear memory to 0
+  for (i = 0; i < SYSTEM_MEMORY_SIZE; i++) {
+    PC_MEM[i] = 0;
+  }
+
   // Reset the CPU
   Z80_Reset();
 

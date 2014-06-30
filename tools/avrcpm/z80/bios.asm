@@ -17,7 +17,7 @@
 mem_offset:	equ	$A800				; Offset for 62K of memory
 bios:		equ	$4A00+mem_offset	; base of BIOS
 cpmb:		equ	$3400+mem_offset	; base of CPM (CCP)
-bdos:		equ	$3c06+mem_offset	; base of BDOS
+bdos:		equ	$3c06+mem_offset	; entry to BDOS
 iobyte:		equ $0003				; address of the IOBYTE
 cdisk:		equ	$0004				; address of last logged disk
 buff:		equ	$0080				; default buffer address

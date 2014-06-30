@@ -9,10 +9,10 @@
 #include <SD.h>
 #include "Z80em.h"
 
-#define EMU_DEBUG
+// #define EMU_DEBUG
 
 extern Sd2Card card;
-byte fileBuffer[512];	// file IO buffer. Used for transferring SD data.
+byte fileBuffer[512];  // file IO buffer. Used for transferring SD data.
 
 extern void DumpMem(int start, int end);
 
@@ -29,6 +29,7 @@ void WriteSDSector(unsigned long SDS, byte *fileBuffer) {
 		Serial.println(error, HEX);
 	}
 }
+
 /****************************************************************************/
 /* Input a byte from given I/O port                                         */
 /****************************************************************************/
