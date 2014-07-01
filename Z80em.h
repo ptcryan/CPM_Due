@@ -1,5 +1,5 @@
-#ifndef _Z80EM_H
-#define _Z80EM_H
+#ifndef Z80EM_H_
+#define Z80EM_H_
 
 #include "arduino.h"
 #include "Z80.h"
@@ -7,6 +7,6 @@
 void setup(void);
 void loop(void);
 
-extern volatile byte PC_MEM[];	// Size of RAM for this system
+extern volatile byte PC_MEM[];  // Size of RAM for this system
 
-#endif  // _Z80EM_H
+#endif  // Z80EM_H_
