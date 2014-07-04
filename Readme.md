@@ -47,10 +47,14 @@ If you prefer an all-in-one HW solution you can also use the DigiX. It has a
 built-in SD card reader as well as WiFi! (but unused on this project). It would
 be really cool if someone(?) got WiFi working with CP/M, but that's for another
 time.
-![DigiX](https://s3.amazonaws.com/digistump-resources/images/m/8dab1ef169626edc7d400ed59a31a18a.jpg)
-**Digistump DigiX**
-![Due](http://arduino.cc/en/uploads/Main/ArduinoDue_Front_450px.jpg)
-**Arduino Due**
+
+|![DigiX](https://s3.amazonaws.com/digistump-resources/images/m/8dab1ef169626edc7d400ed59a31a18a.jpg)|
+|:-:|
+|**Digistump DigiX**|
+
+|![Due](http://arduino.cc/en/uploads/Main/ArduinoDue_Front_450px.jpg)|
+|:-:|
+|**Arduino Due**|
 
 ## How to create disk images
 Creating the disk images is a little tricky. Here's how I did it with OS X.
