@@ -1,6 +1,6 @@
-# Z80Due
-This is a Z80 emulator, and CP/M 2.2 computer built on an Arduino platform. To
-create it I've pulled together several open source projects including
+# CPM Due
+This is a CP/M v2.2 computer that uses a Z80 emulator, running on an Arduino
+Due. To create it I've pulled together several open source projects including
 [avrcpm](http://spritesmods.com/?art=avrcpm) by
 [SpritesMods.com](http://spritesmods.com/?art=main),
 and [Z80 emulator](http://www.komkon.org/~dekogel/misc.html) by
@@ -78,5 +78,5 @@ you have to modify the `Makefile` to change the path. Don't blindly run
 
 ## Where to find this project
 This project is hosted on [Github](http://www.github.com) as
-[ptcryan/**z80due**](https://www.github.com/ptcryan/z80due). Feel free to contribute as
+[ptcryan/**CPM_Due**](https://www.github.com/ptcryan/CPM_Due). Feel free to contribute as
 much as you like!

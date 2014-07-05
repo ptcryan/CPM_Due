@@ -1,13 +1,16 @@
-/*** Z80Em: Portable Z80 emulator *******************************************/
+/****************************************************************************/
 /***                                                                      ***/
 /***                                Z80IO.h                               ***/
 /***                                                                      ***/
 /*** This file contains the prototypes for the functions accessing memory ***/
 /*** and I/O                                                              ***/
 /***                                                                      ***/
-/*** Copyright (C) Marcel de Kogel 1996,1997                              ***/
+/***     Original code is Copyright (C) Marcel de Kogel 1996,1997         ***/
 /***     You are not allowed to distribute this software commercially     ***/
 /***     Please, notify me, if you make any changes to this file          ***/
+/***                                                                      ***/
+/***     Modifications to the original code are                           ***/
+/***     Copyright (C) 2014 David Ryan (pcryan)                           ***/
 /****************************************************************************/
 #ifndef Z80IO_H_
 #define Z80IO_H_

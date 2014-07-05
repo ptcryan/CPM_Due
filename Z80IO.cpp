@@ -1,11 +1,18 @@
-/*** Z80Em: Portable Z80 emulator *******************************************/
+/****************************************************************************/
 /***                                                                      ***/
-/*** Copyright 2014 David Ryan (ptcryan)                                  ***/
+/*** Copyright (C) 2014 David Ryan (ptcryan)                              ***/
+/*** This program is free software; you can redistribute it and/or modify ***/
+/*** it under the terms of the GNU General Public License as published by ***/
+/*** the Free Software Foundation; either version 3 of the License, or    ***/
+/*** (at your option) any later version.                                  ***/
 /***                                                                      ***/
-/***                                Z80IO.c                               ***/
+/*** This program is distributed in the hope that it will be useful,      ***/
+/*** but WITHOUT ANY WARRANTY; without even the implied warranty of       ***/
+/*** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        ***/
+/*** GNU General Public License for more details.                         ***/
 /***                                                                      ***/
 /*** This file contains the prototypes for the functions accessing memory ***/
-/*** and I/O on a Digix                                                   ***/
+/*** and I/O.                                                             ***/
 /***                                                                      ***/
 /****************************************************************************/
 #include <SD.h>
@@ -216,4 +223,3 @@ void Z80_WRMEM(dword A, byte V) {
 /* can be used to slightly speed up emulation                               */
 /****************************************************************************/
 #define Z80_WRSTACK(A, V)    Z80_WRMEM(A, V)
-
