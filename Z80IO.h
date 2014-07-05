@@ -15,7 +15,8 @@
 #ifndef Z80IO_H_
 #define Z80IO_H_
 
-#include "z80em.h"
+#include "Z80em.h"
+#include "Z80.h"
 
 /****************************************************************************/
 /* Input a byte from given I/O port                                         */

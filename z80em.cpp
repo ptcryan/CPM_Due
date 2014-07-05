@@ -19,6 +19,11 @@
 #include "Z80em.h"
 #include "Z80IO.h"
 
+#define SYSTEM_MEMORY_SIZE 65536    // Amount of emulated computer RAM
+#define SERIAL_SPEED 19200          // Console port baud rate
+#define SD_CS 10                    // Chip select on DigiX
+// #define SD_CS 53                    // Chip select on Due
+
 // set up variables using the SD utility library functions:
 Sd2Card card;
 
@@ -28,9 +33,6 @@ extern int Z80_Trap;
 const int chipSelect = 4;
 
 void DumpMem(int start, int stop);
-
-#define SYSTEM_MEMORY_SIZE 65536
-#define SERIAL_SPEED 19200
 
 // Create the memory space that will emulate RAM
 volatile byte PC_MEM[SYSTEM_MEMORY_SIZE];  // Due has 96KB. So 64K is ok!
@@ -57,9 +59,9 @@ void setup(void) {
     Serial.print("\nInitializing SD card...");
     // On the Ethernet Shield, CS is pin 4. It's set as an output by default.
     // Note that even if it's not used as the CS pin, the hardware SS pin
-    // (10 on most Arduino boards, 53 on the Mega) must be left as an output
+    // (10 on most Arduino boards, 53 on the Due) must be left as an output
     // or the SD library functions will not work.
-    pinMode(10, OUTPUT);     // change this to 53 on a mega
+    pinMode(SD_CS, OUTPUT);
 
     if (!card.init(SPI_HALF_SPEED, chipSelect)) {
         Serial.println("initialization failed.");
