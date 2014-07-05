@@ -13,9 +13,12 @@ The portions of code that I created to 'glue' all this together are given
 under the [GPLv3 license](http://www.gnu.org/licenses/gpl-3.0.txt).
 
 ## How to build the application
-Building the application is easy. Simply get a copy of `z80due`, compile it, and
+Building the application is easy. Simply get a copy of `z80due`,
+open the `.ino` file in the Arduino IDE, compile it, and
 load it on your [Arduino Due](http://arduino.cc/en/Main/ArduinoBoardDue)
-or [Digistump DigiX](http://digistump.com/products/50) HW.
+or [Digistump DigiX](http://digistump.com/products/50) HW. Note that
+in order to build applications you'll need Arduino 1.5 or higher to
+support the ARM processor on the Due/DigiX. I've been using 1.5.6-r2.
 
 To create the disk image you'll need to follow the directions in the `tools/
 avrcpm/z80` directory to create a 'floppy disk' onto an SD card.
@@ -80,3 +83,8 @@ you have to modify the `Makefile` to change the path. Don't blindly run
 This project is hosted on [Github](http://www.github.com) as
 [ptcryan/**CPM_Due**](https://www.github.com/ptcryan/CPM_Due). Feel free to contribute as
 much as you like!
+
+Copyright (C) 2014 David Ryan (ptcryan)
+
+[![http://creativecommons.org/licenses/by-sa/4.0/](https://i.creativecommons.org/l/by-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-sa/4.0/)
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
