@@ -1,0 +1,14 @@
+-Dprintf=iprintf
+-DF_CPU=84000000L
+-DARDUINO=156
+-DARDUINO_SAM_DUE
+-DARDUINO_ARCH_SAM
+-D__SAM3X8E__
+-Wall
+-I.
+-I/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/avr-3/include
+-I/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/sam/variants/arduino_due_x
+-I/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/sam/cores/arduino
+-I/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/sam/system/CMSIS/Device/ATMEL
+-I/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/sam/libraries/SPI
+-I/Applications/Arduino.app/Contents/Resources/Java/libraries/SD/src
