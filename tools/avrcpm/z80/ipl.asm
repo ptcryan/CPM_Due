@@ -1,5 +1,5 @@
-;    CP/M IPL for avrcpm
-;    Copyright (C) 2010 Sprite_tm
+;    CP/M IPL for z80due
+;    Copyright (C) 2014 ptcryan
 ;
 ;    This program is free software: you can redistribute it and/or modify
 ;    it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 ;    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 org $2000
-	; IPL for the CP/M-emu in an AVR. Loads CPM from the 'disk' from
+	; IPL for the z80due. Loads CPM from the 'disk' from
 	; track 0 sector 1 to track 1 sector 25.
 
 	ld sp,$1000
