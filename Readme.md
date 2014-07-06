@@ -79,10 +79,37 @@ sd card be carefull to note the volume name for the card. That might mean
 you have to modify the `Makefile` to change the path. Don't blindly run
 `make` or you might overwrite something important!
 
+## Connecting the HW to a terminal for user I/O
+Once you have the application loaded, the image written to an SD card,
+and connected to the HW, the last thing you need to do is connect to
+a terminal emulation program. For this project I've mostly used
+[CoolTerm](http://freeware.the-meiers.org) because first, it's free, and
+second it has just about all the features you need. In the application
+preferences set the serial speed to 19200 8n1. Check the box to handle the
+backspace character, and the terminal bell.
+
+Connecting the HW to the computer is fairly simple. Use a USB cable to
+connect the Due to the computer and select that connection inside CoolTerm.
+
+If you have a DigiX board it's a little more complicated because there's only
+only one USB connection to the board, and it's used for programming. Switching
+between the Arduino IDE and CoolTerm is tedious so I connected a USB to serial
+adaptor to RXTX0 (pins 0 and 1) on the DigiX. **BE WARNED!** the DigiX (and
+Due) can only tolerate 3.3V on the I/O. Only use a serial adaptor that has
+a 3.3V output. I found a handy one by
+[SunFounder on Amazon](http://www.amazon.com/SunFounder-Arduino-Program-Download-Mega2560/dp/B00GD6GE6O/ref=sr_1_1?ie=UTF8&qid=1404669084&sr=8-1&keywords=sunfounder+usb+serial)
+that has a switch selectable 3.3V
+and 5V output.
+
 ## Where to find this project
 This project is hosted on [Github](http://www.github.com) as
 [ptcryan/**CPM_Due**](https://www.github.com/ptcryan/CPM_Due). Feel free to contribute as
 much as you like!
+
+## Version history
+* R2014-07-06: First official version.
+    * Will boot into CP/M. Stable. Runs MS-Basic and Zork I. Supports Arduino
+    Due and Digistump DigiX.
 
 Copyright (C) 2014 David Ryan (ptcryan)
 
