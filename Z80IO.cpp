@@ -17,7 +17,6 @@
 /****************************************************************************/
 #include <SD.h>
 #include "Z80IO.h"
-#include "Z80em.h"
 
 // #define EMU_DEBUG
 
@@ -27,17 +26,33 @@ byte fileBuffer[512];  // file IO buffer. Used for transferring SD data.
 extern void DumpMem(int start, int end);
 
 void ReadSDSector(unsigned long SDS, byte *fileBuffer) {
+#ifdef HW_DISK_LED_ENABLE
+    digitalWrite(HW_DISK_LED, HIGH);
+#endif  // HW_DISK_LED_ENABLE
+
     if (int error = card.readBlock(SDS, fileBuffer) == 0) {
         Serial.print("SD Card read error: ");
         Serial.println(error, HEX);
     }
+
+#ifdef HW_DISK_LED_ENABLE
+    digitalWrite(HW_DISK_LED, LOW);
+#endif  // HW_DISK_LED_ENABLE
 }
 
 void WriteSDSector(unsigned long SDS, byte *fileBuffer) {
+#ifdef HW_DISK_LED_ENABLE
+    digitalWrite(HW_DISK_LED, HIGH);
+#endif  // HW_DISK_LED_ENABLE
+
     if (int error = card.writeBlock(SDS, fileBuffer) == 0) {
         Serial.print("SD Card write error: ");
         Serial.println(error, HEX);
     }
+
+#ifdef HW_DISK_LED_ENABLE
+    digitalWrite(HW_DISK_LED, LOW);
+#endif  // HW_DISK_LED_ENABLE
 }
 
 /****************************************************************************/
