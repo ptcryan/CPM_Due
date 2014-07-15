@@ -16,11 +16,13 @@
 #define Z80EM_H_
 
 #include "Arduino.h"
+//#include <SPI.h>
+//#include <SD.h>
 
 #define VERSION "R2014-07-06"
 
-// #define HW_DIGIX                   // Enable if this is DigiX hardware
-#define HW_DUE                     // Enable if this is Due hardware
+#define HW_DIGIX                   // Enable if this is DigiX hardware
+// #define HW_DUE                     // Enable if this is Due hardware
 
 #define HW_DISK_LED_ENABLE         // Enable for disk LED
 
@@ -28,10 +30,11 @@
 #define CS_SD 4                    // The DigiX built in SD CS
 #else  // Due
 #define CS_SD 53                   // The Due CS pin
+#endif  // !HW_DIGIX
+
 #ifdef HW_DISK_LED_ENABLE
 #define HW_DISK_LED 13             // Use the 'L' LED for disk activity
 #endif  // HW_DISK_LED_ENABLE
-#endif  // !HW_DIGIX
 
 #define SYSTEM_MEMORY_SIZE 65536   // Size of emulator RAM
 #define SERIAL_SPEED 19200         // Console port baud rate

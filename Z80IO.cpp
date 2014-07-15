@@ -19,7 +19,6 @@
 #include "Z80IO.h"
 
 // #define EMU_DEBUG
-
 extern Sd2Card card;
 byte fileBuffer[512];  // file IO buffer. Used for transferring SD data.
 
@@ -31,8 +30,8 @@ void ReadSDSector(unsigned long SDS, byte *fileBuffer) {
 #endif  // HW_DISK_LED_ENABLE
 
     if (int error = card.readBlock(SDS, fileBuffer) == 0) {
-        Serial.print("SD Card read error: ");
-        Serial.println(error, HEX);
+        SerialUSB.print("SD Card read error: ");
+        SerialUSB.println(error, HEX);
     }
 
 #ifdef HW_DISK_LED_ENABLE
@@ -46,8 +45,8 @@ void WriteSDSector(unsigned long SDS, byte *fileBuffer) {
 #endif  // HW_DISK_LED_ENABLE
 
     if (int error = card.writeBlock(SDS, fileBuffer) == 0) {
-        Serial.print("SD Card write error: ");
-        Serial.println(error, HEX);
+        SerialUSB.print("SD Card write error: ");
+        SerialUSB.println(error, HEX);
     }
 
 #ifdef HW_DISK_LED_ENABLE
@@ -63,7 +62,7 @@ byte Z80_In(byte Port) {
 
     switch (Port) {
         case 0x00:  // console status
-            if (Serial.available()) {
+            if (SerialUSB.available()) {
                 return 0xff;    // character ready
             } else {
                 return 0x00;    // character not ready
@@ -71,17 +70,17 @@ byte Z80_In(byte Port) {
             break;
 
         case 0x01:  // console read
-            while (!Serial.available()) {
+            while (!SerialUSB.available()) {
                 {}  // block until serial port has data
             }
-            conchar = Serial.read();
+            conchar = SerialUSB.read();
             return (conchar & 0x7F);  // return the character stripping MSB
             break;
 
         default:
 #ifdef EMU_DEBUG
-            Serial.print("Unhandled read from port: ");
-            Serial.println(Port, HEX);
+            SerialUSB.print("Unhandled read from port: ");
+            SerialUSB.println(Port, HEX);
             return 0;
 #endif  // EMU_DEBUG
             {}
@@ -102,38 +101,38 @@ void Z80_Out(byte Port, byte Value) {
 
     switch (Port) {
         case 0x02:  // console ouput
-            Serial.write(Value);
+            SerialUSB.write(Value);
             break;
 
         case 0x10:  // set track
             track = Value;
 #ifdef EMU_DEBUG
-            Serial.print("T=");
-            Serial.println(Value);
+            SerialUSB.print("T=");
+            SerialUSB.println(Value);
 #endif  // EMU_DEBUG
             break;
 
         case 0x12:  // set sector
             sector = Value;
 #ifdef EMU_DEBUG
-            Serial.print("S=");
-            Serial.println(Value);
+            SerialUSB.print("S=");
+            SerialUSB.println(Value);
 #endif  // EMU_DEBUG
             break;
 
         case 0x14:  // DMA low byte
             DMAAddr = (DMAAddr & 0xff00) | Value;
 #ifdef EMU_DEBUG
-            Serial.print("L=");
-            Serial.println(Value, HEX);
+            SerialUSB.print("L=");
+            SerialUSB.println(Value, HEX);
 #endif  // EMU_DEBUG
             break;
 
         case 0x15:  // DMA high byte
             DMAAddr = (DMAAddr & 0x00ff) | (Value << 8);
 #ifdef EMU_DEBUG
-            Serial.print("H=");
-            Serial.println(Value, HEX);
+            SerialUSB.print("H=");
+            SerialUSB.println(Value, HEX);
 #endif  // EMU_DEBUG
             break;
 
@@ -149,13 +148,13 @@ void Z80_Out(byte Port, byte Value) {
             ReadSDSector(SDBlockNumber, fileBuffer);
 
 #ifdef EMU_DEBUG
-            Serial.print(Value == 1? "RD" : "WR");
-            Serial.print(" TRK:"); Serial.print(track);
-            Serial.print(" SEC:"); Serial.print(sector);
-            Serial.print(" BLK:"); Serial.print(SDBlockNumber);
-            Serial.print(" OFS:"); Serial.print(BlockOffset);
-            Serial.print(" DMA:0x"); Serial.print(DMAAddr, HEX);
-            Serial.println("");
+            SerialUSB.print(Value == 1? "RD" : "WR");
+            SerialUSB.print(" TRK:"); SerialUSB.print(track);
+            SerialUSB.print(" SEC:"); SerialUSB.print(sector);
+            SerialUSB.print(" BLK:"); SerialUSB.print(SDBlockNumber);
+            SerialUSB.print(" OFS:"); SerialUSB.print(BlockOffset);
+            SerialUSB.print(" DMA:0x"); SerialUSB.print(DMAAddr, HEX);
+            SerialUSB.println("");
 #endif  // EMU_DEBUG
 
             switch (Value) {
@@ -173,16 +172,16 @@ void Z80_Out(byte Port, byte Value) {
                     break;
 
                 default:
-                    Serial.println("Unknown IO operation requested");
+                    SerialUSB.println("Unknown IO operation requested");
             }
             break;
 
         default:
 #ifdef EMU_DEBUG
-            Serial.print("Unhandled write: ");
-            Serial.print(Value, HEX);
-            Serial.print(" to port: ");
-            Serial.println(Port, HEX);
+            SerialUSB.print("Unhandled write: ");
+            SerialUSB.print(Value, HEX);
+            SerialUSB.print(" to port: ");
+            SerialUSB.println(Port, HEX);
 #endif  // EMU_DEBUG
             {}
     }
