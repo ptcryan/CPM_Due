@@ -29,9 +29,10 @@ volatile byte PC_MEM[SYSTEM_MEMORY_SIZE];  // Due has 96KB. So 64K is ok!
 
 void setup(void) {
     // setup the serial port for debug purposes
-    Serial.begin(SERIAL_SPEED);
-    while (!Serial) {
-        {}
+    SerialUSB.begin(SERIAL_SPEED);
+    while (!SerialUSB.available()) {
+        SerialUSB.println("Press any key to begin.");
+        delay(1000);
     }
 
 #ifdef HW_DISK_LED_ENABLE
@@ -40,34 +41,34 @@ void setup(void) {
 #endif  // HW_DISK_LED_ENABLE
 
     // Print banner & info
-    Serial.println();
-    Serial.println("Zilog Z80 PC emulator");
-    Serial.println("Running on ARM M3");
-    Serial.print("Version ");
-    Serial.println(VERSION);
-    Serial.print("Built on ");
-    Serial.print(__DATE__);
-    Serial.print(" at ");
-    Serial.println(__TIME__);
-    Serial.print(SYSTEM_MEMORY_SIZE / 1024);
-    Serial.print("K bytes");
-    Serial.println(" of RAM available");
+    SerialUSB.println();
+    SerialUSB.println("Zilog Z80 PC emulator");
+    SerialUSB.println("Running on ARM M3");
+    SerialUSB.print("Version ");
+    SerialUSB.println(VERSION);
+    SerialUSB.print("Built on ");
+    SerialUSB.print(__DATE__);
+    SerialUSB.print(" at ");
+    SerialUSB.println(__TIME__);
+    SerialUSB.print(SYSTEM_MEMORY_SIZE / 1024);
+    SerialUSB.print("K bytes");
+    SerialUSB.println(" of RAM available");
 
-    Serial.print("\nInitializing SD card...");
+    SerialUSB.print("\nInitializing SD card...");
 
     uint8_t cardStatus = card.init(SPI_HALF_SPEED, CS_SD);
 
     if (!cardStatus) {
-        Serial.println("initialization failed.");
-        Serial.print("Card status error = ");
-        Serial.println(cardStatus);
+        SerialUSB.println("initialization failed.");
+        SerialUSB.print("Card status error = ");
+        SerialUSB.println(cardStatus);
         return;
     } else {
-        Serial.println("SD card detected.");
+        SerialUSB.println("SD card detected.");
     }
 
     // fill PC RAM with 0xCB
-    Serial.print("Running PC RAM tests...");
+    SerialUSB.print("Running PC RAM tests...");
     uint32_t i;
     for (i = 0; i < SYSTEM_MEMORY_SIZE; i++) {
         PC_MEM[i] = 0xcb;
@@ -78,13 +79,13 @@ void setup(void) {
     for (i = 0; i < SYSTEM_MEMORY_SIZE; i++) {
         if (PC_MEM[i] != 0xcb) {
             memTestPass = false;
-            Serial.print(" failed at ");
-            Serial.println(i, HEX);
+            SerialUSB.print(" failed at ");
+            SerialUSB.println(i, HEX);
         }
     }
 
     if (memTestPass == true) {
-        Serial.println("Pass");
+        SerialUSB.println("Pass");
     }
 
     // clear memory to 0
@@ -97,8 +98,8 @@ void setup(void) {
 
     // Use the port interfaces we already have
     // to load the system Cold Start Loader
-    Serial.println("");
-    Serial.println("booting from boot sector...");
+    SerialUSB.println("");
+    SerialUSB.println("booting from boot sector...");
 
     // The ipl is located on track 0 sector 0 of disk
     Z80_Out(0x10, 0);  // track=0
@@ -118,30 +119,30 @@ void setup(void) {
 }
 
 void loop(void) {
-    Serial.println("System stopped.");
+    SerialUSB.println("System stopped.");
     while (1) {}
 }
 
 void DumpMem(int start, int stop) {
     for (int i = start; i < stop; i+=16) {
-        Serial.print(i, HEX);
-        Serial.print(": ");
+        SerialUSB.print(i, HEX);
+        SerialUSB.print(": ");
         for (int j = i; j < i+16; j++) {
             if (PC_MEM[j] < 0x10) {
-                Serial.print("0");  // Add leading zero for alignment
+                SerialUSB.print("0");  // Add leading zero for alignment
             }
-            Serial.print(PC_MEM[j], HEX);
-            Serial.print(" ");
+            SerialUSB.print(PC_MEM[j], HEX);
+            SerialUSB.print(" ");
         }
 
-        Serial.print("| ");
+        SerialUSB.print("| ");
         for (int k = i; k < i+16; k++) {
             if (PC_MEM[k] > 31) {
-                Serial.write(PC_MEM[k]);
+                SerialUSB.write(PC_MEM[k]);
             } else {
-                Serial.print(".");
+                SerialUSB.print(".");
             }
         }
-        Serial.println();
+        SerialUSB.println();
     }
 }
